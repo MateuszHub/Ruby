@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+    app:
+        image: ruby:latest
+        working_dir: /usr/src/app
+        command: sh -c "apt-get update && apt-get -y install sqlite3 libsqlite3-dev  && bundle install && echo "Done!" &&  tail -f /dev/null"
+        volumes:
+            - ./:/usr/src/app
